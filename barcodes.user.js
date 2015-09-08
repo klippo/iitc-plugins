@@ -42,7 +42,8 @@ window.plugin.barcodes.nameMap = {
   "IllIIIllIIIIlII": "Krapos",
   "lIIllIIllIlIIlI": "Soulweeper",
   "IIIlIIIlllIIlII": "BigDouche",
-  "IIllIllIllIllI": "ProgramError"
+  "IIllIllIllIllI": "ProgramError",
+  "IlIIIlIIlIIllll": "midnight1994"
 }
 window.plugin.barcodes.replaceNames = function(data) {
   $(".nickname").each(function(index, value){
