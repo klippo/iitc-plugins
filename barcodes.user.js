@@ -41,7 +41,7 @@ window.plugin.barcodes.nameMap = {
   "lIIIIIIIIlIlIIl": "BK2OI",
   "IllIIIllIIIIlII": "Krapos",
   "lIIllIIllIlIIlI": "Soulweeper",
-  "IIIlIIIlllIIlII": "BigDouche",
+  "IIIlIIIlllIIlII": "Heisenturd",
   "IIllIllIllIllI": "ProgramError",
   "IlIIIlIIlIIllll": "midnight1994"
 }
