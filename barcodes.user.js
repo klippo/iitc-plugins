@@ -2,11 +2,11 @@
 // @id             iitc-plugin-barcodes@3ch01c
 // @name           IITC plugin: Replace player names with more easily remembered names
 // @category       Portal Info
-// @version        0.0.1.20150916.180400
+// @version        0.0.1.20150922.004400
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
 // @downloadURL    https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
-// @description    [local-2015-09-15-220800] Show resonator energy percentage on resonator energy bar in portal detail panel.
+// @description    [local-2015-09-22-004400] Show resonator energy percentage on resonator energy bar in portal detail panel.
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -33,7 +33,7 @@ window.plugin.barcodes.nameMap = {
   "IllIIIllIIIIlII": "Krapos",
   "lIIllIIllIlIIlI": "Soulweeper",
   "IIIlIIIlllIIlII": "Heisenturd",
-  "IIllIllIllIllI": "ProgrumUrrhurr",
+  "IIllIllIllIllI": "ProgramError",
   "IlIIIlIIlIIllll": "midnight1994",
   "lIIlIllIIIIllIl": "gotmystogan",
   "lIIIIIlIIlIIIIl": "akio",
@@ -45,7 +45,12 @@ window.chat.nicknameClicked = function(event, nickname) {
   var hookData = { event: event, nickname: nickname };
 
   if (window.runHooks('nicknameClicked', hookData)) {
-    window.chat.addNickname('@' + nickname + " (" + window.plugin.barcodes.decode(nickname) + ")");
+    if (window.plugin.barcodes.decode(nickname) !== nickname) {
+      window.chat.addNickname('@' + nickname + " (" + window.plugin.barcodes.decode(nickname) + ")");
+    }
+    else {
+      window.chat.addNickname('@' + nickname);
+    }
   }
 
   event.preventDefault();
