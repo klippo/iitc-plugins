@@ -2,7 +2,7 @@
 // @id             iitc-plugin-barcodes@3ch01c
 // @name           IITC plugin: Replace player names with more easily remembered names
 // @category       Portal Info
-// @version        0.0.1.20150915.220800
+// @version        0.0.1.20150916.180400
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
 // @downloadURL    https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
@@ -33,15 +33,38 @@ window.plugin.barcodes.nameMap = {
   "IllIIIllIIIIlII": "Krapos",
   "lIIllIIllIlIIlI": "Soulweeper",
   "IIIlIIIlllIIlII": "Heisenturd",
-  "IIllIllIllIllI": "ProgramError",
+  "IIllIllIllIllI": "ProgrumUrrhurr",
   "IlIIIlIIlIIllll": "midnight1994",
   "lIIlIllIIIIllIl": "gotmystogan",
-  "lIIIIIlIIlIIIIl": "akio"
+  "lIIIIIlIIlIIIIl": "akio",
+  "llIlIIIlIlIlllI": "Rooukin",
+  "IIIIllIlIIlIIll": "Xandercat"
+}
+
+window.chat.nicknameClicked = function(event, nickname) {
+  var hookData = { event: event, nickname: nickname };
+
+  if (window.runHooks('nicknameClicked', hookData)) {
+    window.chat.addNickname('@' + nickname + " (" + window.plugin.barcodes.decode(nickname) + ")");
+  }
+
+  event.preventDefault();
+  event.stopPropagation();
+  return false;
 }
 window.plugin.barcodes.replaceNames = function(data) {
-  $(".nickname").each(function(index, value){
+  console.log(this);
+  $(".nickname, .pl_nudge_player").each(function(index, value){
     value = $(value);
-    value.text(window.plugin.barcodes.decode(value.text()));
+    var nickname = window.plugin.barcodes.decode(value.text());
+    value.text(nickname);
+  });
+  $(".pl_nudge_player").each(function(index, value){
+    value = $(value);
+    var nickname = value.text();
+    nickname = nickname.substring(1,nickname.length);
+    nickname = window.plugin.barcodes.decode(nickname);
+    value.text("@" + nickname);
   });
 }
 window.plugin.barcodes.decode = function(barcode) {
