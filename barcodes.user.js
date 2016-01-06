@@ -39,7 +39,8 @@ window.plugin.barcodes.nameMap = {
   "lIIIIIlIIlIIIIl": "akio",
   "llIlIIIlIlIlllI": "Harooukin",
   "IIIIllIlIIlIIll": "Xandercat",
-  "IlllIIIIIllIlII": "catwoman"
+  "IlllIIIIIllIlII": "catwoman",
+  "IIllIIlIIllIllI": "5r"
 }
 
 window.chat.nicknameClicked = function(event, nickname) {
