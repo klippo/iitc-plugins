@@ -2,11 +2,11 @@
 // @id             iitc-plugin-barcodes@3ch01c
 // @name           IITC plugin: Replace player names with more easily remembered names
 // @category       Portal Info
-// @version        0.0.1.20160106.0922
+// @version        0.0.1.20160108.0228
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
 // @downloadURL    https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
-// @description    [local-2016-01-06-092200] Show resonator energy percentage on resonator energy bar in portal detail panel.
+// @description    [local-2016-01-08-022800] Show resonator energy percentage on resonator energy bar in portal detail panel.
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -42,7 +42,7 @@ window.plugin.barcodes.nameMap = {
   "IlllIIIIIllIlII": "catwoman",
   "IIllIIlIIllIllI": "5r"
 }
-
+window.plugin.barcodes.barPatt = new RegExp("^[Il]{15}$");
 window.chat.nicknameClicked = function(event, nickname) {
   var hookData = { event: event, nickname: nickname };
 
@@ -60,17 +60,19 @@ window.chat.nicknameClicked = function(event, nickname) {
   return false;
 }
 window.plugin.barcodes.replaceNames = function(data) {
+  var barPatt = window.plugin.barcodes.barPatt;
   console.log(this);
   $(".nickname, .pl_nudge_player").each(function(index, value){
     value = $(value);
-    var nickname = window.plugin.barcodes.decode(value.text());
+    var nickname = value.text();
+    if (barPatt.test(nickname)) nickname = window.plugin.barcodes.decode(nickname);
     value.text(nickname);
   });
   $(".pl_nudge_player").each(function(index, value){
     value = $(value);
     var nickname = value.text();
     nickname = nickname.substring(1,nickname.length);
-    nickname = window.plugin.barcodes.decode(nickname);
+    if (barPatt.test(nickname)) nickname = window.plugin.barcodes.decode(nickname);
     value.text("@" + nickname);
   });
 }
@@ -79,7 +81,14 @@ window.plugin.barcodes.decode = function(barcode) {
     return window.plugin.barcodes.nameMap[barcode];
   }
   else {
-    return barcode;
+    var s = "";
+    for (i=0;i<3;i++){
+      var b = barcode.slice((5*(i+1))-5,5*(i+1)).replace(/\I/g,'0').replace(/\l/g,'1');
+      var d = parseInt(b, 2);
+      s += String.fromCharCode(64 + d)
+    }
+    if (s.length === 3) return s;
+    else return barcode;
   }
 }
 
