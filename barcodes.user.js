@@ -2,11 +2,11 @@
 // @id             iitc-plugin-barcodes@3ch01c
 // @name           IITC plugin: Replace player names with more easily remembered names
 // @category       Portal Info
-// @version        0.0.1.20160108.0228
+// @version        0.0.1.20160116.0121
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
 // @downloadURL    https://github.com/3ch01c/iitc-plugins/raw/master/barcodes.user.js
-// @description    [local-2016-01-08-022800] Show resonator energy percentage on resonator energy bar in portal detail panel.
+// @description    [local-2016-01-16-012100] Show resonator energy percentage on resonator energy bar in portal detail panel.
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -40,9 +40,11 @@ window.plugin.barcodes.nameMap = {
   "llIlIIIlIlIlllI": "Harooukin",
   "IIIIllIlIIlIIll": "Xandercat",
   "IlllIIIIIllIlII": "catwoman",
-  "IIllIIlIIllIllI": "5r"
+  "IIllIIlIIllIllI": "5r",
+  "IllIIIIllIlIIll": "LIFS"
 }
 window.plugin.barcodes.barPatt = new RegExp("^[Il]{15}$");
+/*
 window.chat.nicknameClicked = function(event, nickname) {
   var hookData = { event: event, nickname: nickname };
 
@@ -59,6 +61,7 @@ window.chat.nicknameClicked = function(event, nickname) {
   event.stopPropagation();
   return false;
 }
+*/
 window.plugin.barcodes.replaceNames = function(data) {
   var barPatt = window.plugin.barcodes.barPatt;
   console.log(this);
