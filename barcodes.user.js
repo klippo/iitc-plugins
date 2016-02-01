@@ -38,10 +38,12 @@ window.plugin.barcodes.nameMap = {
   "lIIlIllIIIIllIl": "gotmystogan",
   "lIIIIIlIIlIIIIl": "akio",
   "llIlIIIlIlIlllI": "Harooukin",
-  "IIIIllIlIIlIIll": "Xandercat",
   "IlllIIIIIllIlII": "catwoman",
-  "IIllIIlIIllIllI": "5r",
-  "IllIIIIllIlIIll": "LIFS"
+  "IIllIIlIIllIllI": "FiverOhFive",
+  "IllIIIIllIlIIll": "LIFS",
+  "IIIlIIlIIIlIlII": "EP toad?",
+  "lIIlllIllIIIIIl": "hammer",
+  "IIlllIllIlIIllI": "play333"
 }
 window.plugin.barcodes.barPatt = new RegExp("^[Il]{15}$");
 /*
