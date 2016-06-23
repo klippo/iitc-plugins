@@ -48,7 +48,7 @@ window.plugin.barcodes.nameMap = {
   "IIIllIllIllIllI": "227ths",
   "lIIllIlllIIIllI": "coldpizzarolls",
   "IlIlIIllIlIllll": "tvvsdad"
-
+}
 window.plugin.barcodes.barPatt = new RegExp("^[Il]{15}$");
 /*
 window.chat.nicknameClicked = function(event, nickname) {
