@@ -29,7 +29,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 window.plugin.barcodes = function() {};
 window.plugin.barcodes.nameMap = {
   "IIllIlIlIIlIIll": "SmurfStalkin",
-  "lIIIIIIIIlIlIIl": "BK2OI",
+  "IlIlIlIlIlIlllI": "BK2OI",
   "IllIIIllIIIIlII": "Krapos",
   "lIIllIIllIlIIlI": "Soulweeper",
   "IIIlIIIlllIIlII": "Heisenturd",
@@ -47,7 +47,8 @@ window.plugin.barcodes.nameMap = {
   "lIlIIlIllIlIIll": "tvvsmom",
   "IIIllIllIllIllI": "227ths",
   "lIIllIlllIIIllI": "coldpizzarolls",
-  "IlIlIIllIlIllll": "tvvsdad"
+  "IlIlIIllIlIllll": "tvvsdad",
+  "lIIlIllIlIIIlll": "nothingtheir"
 }
 window.plugin.barcodes.barPatt = new RegExp("^[Il]{15}$");
 /*
