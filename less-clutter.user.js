@@ -2,15 +2,15 @@
 // @id             iitc-plugin-less-clutter@qnstie
 // @name           IITC plugin: less clutter in the display
 // @category       Tweaks
-// @version        0.1.0.20130928.170000
+// @version        0.2
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @updateURL      http://iitcm.code-noobs.org/less-clutter.meta.js
-// @downloadURL    http://iitcm.code-noobs.org/less-clutter.user.js
+// @updateURL      https://github.com/klippo/iitc-plugins/raw/master/glympse.meta.js
+// @downloadURL    https://github.com/klippo/iitc-plugins/raw/master/glympse.user.js
 // @description    [qnstie-2013-07-08] render markers as small circles with thin bezels, regardless of their level. Best to use with "Portal Levels" plugin.
-// @include        https://www.ingress.com/intel*
-// @include        http://www.ingress.com/intel*
-// @match          https://www.ingress.com/intel*
-// @match          http://www.ingress.com/intel*
+// @include        https://*.ingress.com/intel*
+// @include        http://*.ingress.com/intel*
+// @match          https://*.ingress.com/intel*
+// @match          http://.ingress.com/intel*
 // @grant          none
 // ==/UserScript==
 
