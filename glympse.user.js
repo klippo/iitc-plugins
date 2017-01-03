@@ -10,7 +10,8 @@
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
-// @match          http://*.ingress.com/intel*// @grant          none
+// @match          http://*.ingress.com/intel*
+// @grant          none
 // ==/UserScript==
 
 function wrapper(plugin_info) {
