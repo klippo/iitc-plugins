@@ -2,14 +2,15 @@
 // @id             iitc-plugin-glympse
 // @name           IITC plugin: Resistance Glympse Layer
 // @category       Layer
-// @version        0.1.0.23
+// @version        0.2
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
+// @updateURL      https://github.com/klippo/iitc-plugins/raw/master/glympse.user.js
+// @downloadURL    https://github.com/klippo/iitc-plugins/raw/master/glympse.user.js
 // @description    Glympse Layer for IITC - View Glympse users on IITC map
-// @include        https://www.ingress.com/intel*
-// @include        http://www.ingress.com/intel*
-// @match          https://www.ingress.com/intel*
-// @match          http://www.ingress.com/intel*
-// @grant          none
+// @include        https://*.ingress.com/intel*
+// @include        http://*.ingress.com/intel*
+// @match          https://*.ingress.com/intel*
+// @match          http://*.ingress.com/intel*// @grant          none
 // ==/UserScript==
 
 function wrapper(plugin_info) {
@@ -21,7 +22,7 @@ function wrapper(plugin_info) {
 	// (leaving them in place might break the 'About IITC' page or break update
 	// checks)
 	plugin_info.buildName = 'iitc-plugin-glympse';
-	plugin_info.dateTimeVersion = '20140226.3202';
+	plugin_info.dateTimeVersion = '2017010370103';
 	plugin_info.pluginId = 'glympse-viewer';
 	// END PLUGIN AUTHORS NOTE
 	// PLUGIN START ////////////////////////////////////////////////////////
