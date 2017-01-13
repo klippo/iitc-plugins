@@ -1,8 +1,8 @@
 // ==UserScript==
 // @id             iitc-plugin-glympse
-// @name           IITC plugin: Resistance Glympse Layer
+// @name           IITC plugin: Glympse Layer
 // @category       Layer
-// @version        0.2
+// @version        0.2.1
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/klippo/iitc-plugins/raw/master/glympse.user.js
 // @downloadURL    https://github.com/klippo/iitc-plugins/raw/master/glympse.user.js
